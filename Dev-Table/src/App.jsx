@@ -1,118 +1,65 @@
 import './App.css'
-import CTAButton from './components/CTAButton'
-import PrimaryButton from './components/PrimaryButton'
-import SecondaryButton from './components/SecondaryButton'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import CTAButton from './components/CTAButton/CTAButton'
+import Home from './views/Home/Home'
+import Services from './views/Services/Services'
+import About from './views/About/About'
+import Contact from './views/Contact/Contact'
 
 function App() {
   return (
-    <div className="app">
-      <header className="navbar">
-        <div className="nav-container">
-          <div className="logo">DevTable</div>
-          <nav className="nav-links">
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-          </nav>
-          <CTAButton>Get Started</CTAButton>
-        </div>
-      </header>
-
-      <main>
-        <section className="hero">
-          <div className="hero-content">
-            <h1 className="hero-title">
-              The Future of <span className="highlight">Technology</span> Starts Here
-            </h1>
-            <p className="hero-subtitle">
-              We build cutting-edge digital solutions that transform your business into a technological powerhouse
-            </p>
-            <div className="hero-buttons">
-              <PrimaryButton>Start Your Journey</PrimaryButton>
-              <SecondaryButton>Learn More</SecondaryButton>
-            </div>
+    <Router>
+      <div className="app">
+        <header className="navbar">
+          <div className="nav-container">
+            <Link to="/" className="logo">DevTable</Link>
+            <nav className="nav-links">
+              <Link to="/">Home</Link>
+              <Link to="/services">Services</Link>
+              <Link to="/about">About</Link>
+              <Link to="/contact">Contact</Link>
+            </nav>
+            <CTAButton>Get Started</CTAButton>
           </div>
-          <div className="hero-visual">
-            <div className="tech-grid">
-              <div className="grid-item"></div>
-              <div className="grid-item"></div>
-              <div className="grid-item"></div>
-              <div className="grid-item"></div>
-            </div>
-          </div>
-        </section>
+        </header>
 
-        <section className="features">
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+
+        <footer className="footer">
           <div className="container">
-            <h2 className="section-title">Revolutionary Features</h2>
-            <div className="features-grid">
-              <div className="feature-card">
-                <div className="feature-icon"></div>
-                <h3>AI Integration</h3>
-                <p>Harness the power of artificial intelligence to automate and optimize your workflows</p>
+            <div className="footer-content">
+              <div className="footer-section">
+                <h3>DevTable</h3>
+                <p>Leading the digital transformation revolution</p>
               </div>
-              <div className="feature-card">
-                <div className="feature-icon"></div>
-                <h3>Cloud Solutions</h3>
-                <p>Scalable cloud infrastructure that grows with your business needs</p>
+              <div className="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                  <li><Link to="/services">Services</Link></li>
+                  <li><Link to="/about">About</Link></li>
+                  <li><Link to="/contact">Contact</Link></li>
+                </ul>
               </div>
-              <div className="feature-card">
-                <div className="feature-icon"></div>
-                <h3>Cybersecurity</h3>
-                <p>Enterprise-grade security to protect your digital assets and data</p>
+              <div className="footer-section">
+                <h4>Contact</h4>
+                <p>devtable276@gmail.com</p>
+                <p>+52 1 33 3393 1845</p>
               </div>
+            </div>
+            <div className="footer-bottom">
+              <p>&copy; 2025 DevTable. All rights reserved.</p>
             </div>
           </div>
-        </section>
-
-        <section className="stats">
-          <div className="container">
-            <div className="stats-grid">
-              <div className="stat">
-                <div className="stat-number">500+</div>
-                <div className="stat-label">Projects Delivered</div>
-              </div>
-              <div className="stat">
-                <div className="stat-number">99.9%</div>
-                <div className="stat-label">Uptime Guaranteed</div>
-              </div>
-              <div className="stat">
-                <div className="stat-number">24/7</div>
-                <div className="stat-label">Support Available</div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <footer className="footer">
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-section">
-              <h3>TechCorp</h3>
-              <p>Leading the digital transformation revolution</p>
-            </div>
-            <div className="footer-section">
-              <h4>Quick Links</h4>
-              <ul>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-              </ul>
-            </div>
-            <div className="footer-section">
-              <h4>Contact</h4>
-              <p>info@techcorp.com</p>
-              <p>+1 (555) 123-4567</p>
-            </div>
-          </div>
-          <div className="footer-bottom">
-            <p>&copy; 2024 TechCorp. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
-    </div>
+        </footer>
+      </div>
+    </Router>
   )
 }
 

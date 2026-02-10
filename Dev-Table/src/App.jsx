@@ -1,4 +1,7 @@
 import './App.css'
+import CTAButton from './components/CTAButton'
+import PrimaryButton from './components/PrimaryButton'
+import SecondaryButton from './components/SecondaryButton'
 
 function App() {
   return (
@@ -12,7 +15,7 @@ function App() {
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
           </nav>
-          <button className="cta-button">Get Started</button>
+          <CTAButton>Get Started</CTAButton>
         </div>
       </header>
 
@@ -26,8 +29,8 @@ function App() {
               We build cutting-edge digital solutions that transform your business into a technological powerhouse
             </p>
             <div className="hero-buttons">
-              <button className="primary-btn">Start Your Journey</button>
-              <button className="secondary-btn">Learn More</button>
+              <PrimaryButton>Start Your Journey</PrimaryButton>
+              <SecondaryButton>Learn More</SecondaryButton>
             </div>
           </div>
           <div className="hero-visual">

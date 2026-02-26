@@ -22,17 +22,16 @@
 }
 
 .contact-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  display: flex;
   max-width: 1000px;
   margin: 0 auto;
 }
 
 .contact-info {
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .contact-item h3 {
@@ -106,11 +105,22 @@
   
   .contact-subtitle {
     font-size: 1.1rem;
+    margin-bottom: 20px;
   }
   
   .contact-content {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .contact-item {
+    margin: 25px 0;
   }
   
   .contact-form {
